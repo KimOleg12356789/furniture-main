@@ -1339,4 +1339,8 @@ p {
     background-color: transparent;
     border: 1px solid var(--color-white_grey);
   }
+
+  .section-1__text br {
+    display: none;
+  }
 }
