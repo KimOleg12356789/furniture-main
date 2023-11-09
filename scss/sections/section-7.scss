@@ -1,0 +1,178 @@
+$desktop: 1439.98px;
+$desktopLow: 1099.98px;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileLow: 559.98px;
+$mobileSmall: 479.98px;
+
+@import '../mixins';
+
+.section-7 {
+	&__container {
+	}
+
+	&__body {
+		position: relative;
+		padding-right: rem(84);
+
+		@media (max-width: $desktop) {
+			padding-right: rem(64);
+		}
+
+		@media (min-width: $desktopLow) {
+			display: grid;
+			grid-template-columns: 50% 1fr;
+			gap: rem(32);
+		}
+
+		@media (max-width: $desktopLow) {
+			padding-right: 0;
+		}
+	}
+
+	&__content {
+		
+	}
+
+	&__text-wrapper {
+		&:not(:last-child) {
+			margin-bottom: rem(64);
+
+			@media (max-width: $desktopLow) {
+				margin-bottom: rem(48);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(32);
+			}
+		}
+	}
+
+	&__title {
+	}
+
+	&__subtitle {
+	}
+
+	&__text {
+		
+	}
+
+	&__row {
+		display: grid;
+		gap: rem(32);
+		grid-template-columns: repeat(3, 1fr);
+
+		@media (max-width: $mobile) {
+			grid-template-columns: 1fr;
+			gap: rem(16);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(80);
+
+			@media (max-width: $desktop) {
+				margin-bottom: rem(64);
+			}
+			@media (max-width: $desktopLow) {
+				margin-bottom: rem(48);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(32);
+			}
+		}
+	}
+
+	&__item {
+		cursor: pointer;
+
+		@media (max-width: $mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&:hover {
+			.static {
+				display: none;
+			}
+
+			.hover {
+				display: block;
+			}
+
+			.section-7__item-text {
+				color: cl('green');
+			}
+		}
+	}
+
+	&__item-icon {
+		width: 48px;
+		aspect-ratio: 1;
+		transform-origin: 50% 50%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media (max-width: $mobile) {
+			width: 40px;
+		}
+
+		img {
+			object-fit: fill;
+		}
+
+		.hover {
+			display: none;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+
+			@media (max-width: $mobile) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+
+	&__item-text {
+		@media (max-width: $mobile) {
+			text-align: center;
+		}
+	}
+
+	&__action {
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	&__button {
+	}
+
+	&__image {
+		@media (max-width: $desktopLow) {
+			display: none;
+		}
+
+		border-radius: 8px;
+		overflow: hidden;
+
+		width: 100%;
+		margin: 10% 0;
+	}
+
+	&__background-title {
+		@media (max-width: $desktopLow) {
+			display: none;
+		}
+
+		position: absolute;
+		top: 0;
+		left: 100%;
+		height: 100%;
+		width: 46px;
+	}
+}

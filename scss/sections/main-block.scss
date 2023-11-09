@@ -1,0 +1,278 @@
+$desktop: 1439.98px;
+$desktopLow: 1099.98px;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileLow: 559.98px;
+$mobileSmall: 479.98px;
+
+@import '../mixins';
+
+.main-block {
+	padding-bottom: rem(72);
+	@media (max-width: $desktop) {
+		padding-bottom: rem(56);
+	}
+	@media (max-width: $desktopLow) {
+		padding-bottom: rem(40);
+	}
+	@media (max-width: $mobile) {
+		padding-bottom: rem(24);
+	}
+
+	&__slider {
+	}
+
+	&__container {
+	}
+
+	&__body {
+		padding: rem(80) 0;
+		@media (max-width: $desktop) {
+			padding: rem(64) 0;
+		}
+		@media (max-width: $desktopLow) {
+			padding: rem(40) 0;
+		}
+	}
+
+	&__benefits {
+		display: grid;
+		gap: rem(16);
+		row-gap: rem(32);
+		grid-template-columns: repeat(4, 1fr);
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__benefit {
+		cursor: pointer;
+
+		@media (min-width: $mobile) {
+			&:not(:last-child) {
+				padding-right: rem(16);
+				border-right: 1px solid rgba(189, 225, 231, 0.1);
+			}
+		}
+
+		display: flex;
+		flex-direction: column;
+		gap: rem(24);
+		@media (max-width: $desktopLow) {
+			gap: rem(16);
+		}
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			.static {
+				display: none;
+			}
+
+			.hover {
+				display: block;
+			}
+
+			.main-block__benefit-text {
+				color: cl('green');
+			}
+		}
+	}
+
+	&__benefit-icon {
+		width: 56px;
+		aspect-ratio: 1;
+
+		@media (max-width: $desktopLow) {
+			width: 40px;
+			height: 40px;
+		}
+
+		.hover {
+			display: none;
+		}
+
+		img {
+			object-fit: fill;
+		}
+	}
+
+	&__benefit-text {
+		text-align: center;
+	}
+}
+
+.main-slider {
+	.splide__pagination {
+		bottom: rem(52);
+		gap: rem(24);
+
+		li {
+			button.is-active {
+				position: relative;
+				background-color: cl('white_grey');
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: calc((16px - 8px) / 2 * -1);
+					left: calc((16px - 8px) / 2 * -1);
+					width: 16px;
+					height: 16px;
+					border-radius: 50%;
+					background-color: transparent;
+					border: 1px solid cl('white_grey');
+				}
+			}
+
+			button {
+				width: 8px;
+				height: 8px;
+				background-color: cl('green');
+				transform: scale(1);
+			}
+		}
+	}
+
+	&#main-slider-background {
+		position: relative;
+		z-index: 0;
+	}
+
+	&#main-slider-foreground {
+		pointer-events: none;
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		top: 0;
+		left: 0;
+
+		.splide__pagination,
+		.splide__arrows {
+			display: none;
+		}
+
+		.main-slider__list {
+			position: relative;
+			z-index: 3;
+		}
+
+		.main-slider__slide-button {
+			pointer-events: auto;
+		}
+	}
+
+	&__track {
+	}
+
+	&__list {
+	}
+
+	&__slide {
+		width: 100dvw !important;
+	}
+
+	&__slide-body {
+		min-height: 100vh;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		@media (max-width: $mobileLow) {
+			background-position: 54%;
+		}
+	}
+
+	&__content-wrapper {
+		position: relative;
+		z-index: 5;
+		padding: 0 rem(14);
+		min-height: 100vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__slide-title {
+		text-align: center;
+		color: cl('white_grey');
+
+		span {
+			color: cl('green');
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(40);
+
+			@media (max-width: $desktop) {
+				margin-bottom: rem(16);
+			}
+
+			@media (max-width: $mobile) {
+				margin-bottom: rem(24);
+			}
+		}
+	}
+
+	&__slide-subtitle {
+		text-align: center;
+		color: cl('white_grey');
+
+		&:not(:last-child) {
+			margin-bottom: rem(56);
+
+			@media (max-width: $desktop) {
+				margin-bottom: rem(32);
+			}
+		}
+	}
+
+	&__people-bg {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+
+		position: absolute !important;
+		z-index: 2;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 90%;
+		aspect-ratio: 676 / 834;
+	}
+
+	&__slide-button {
+	}
+
+	&__controlls {
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__arrow {
+		width: 80px;
+		height: 80px;
+		border-radius: 4px 0px 0px 4px;
+		background: rgba(174, 174, 174, 0.2);
+		backdrop-filter: blur(4px);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	&__arrow-prev {
+		left: 0;
+	}
+
+	&__arrow-next {
+		right: 0;
+	}
+}

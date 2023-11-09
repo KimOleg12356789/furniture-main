@@ -1,0 +1,123 @@
+@media (min-width: 767.98px) {
+  .section-5__body {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 10.25rem;
+  }
+}
+@media (min-width: 767.98px) and (max-width: 1439.98px) {
+  .section-5__body {
+    gap: 2.25rem;
+    grid-template-columns: 48% 1fr;
+  }
+}
+@media (min-width: 767.98px) and (max-width: 1099.98px) {
+  .section-5__body {
+    gap: 1rem;
+  }
+}
+.section-5__text-wrapper:not(:last-child) {
+  margin-bottom: 5rem;
+}
+@media (max-width: 1439.98px) {
+  .section-5__text-wrapper:not(:last-child) {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (max-width: 1099.98px) {
+  .section-5__text-wrapper:not(:last-child) {
+    margin-bottom: 3.125rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-5__text-wrapper:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+.section-5__text span {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+@media (max-width: 1099.98px) {
+  .section-5__text span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-5__text span {
+    font-size: 0.875rem;
+  }
+}
+.section-5__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 767.98px) {
+  .section-5__row {
+    gap: 1rem;
+  }
+}
+.section-5__row:not(:last-child) {
+  margin-bottom: 5rem;
+}
+@media (max-width: 1439.98px) {
+  .section-5__row:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 1099.98px) {
+  .section-5__row:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .section-5__row:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+.section-5__item {
+  cursor: pointer;
+}
+.section-5__item:hover .static {
+  display: none;
+}
+.section-5__item:hover .hover {
+  display: block;
+}
+.section-5__item:hover .section-5__item-text {
+  color: var(--color-green);
+}
+.section-5__item-icon {
+  width: 48px;
+  aspect-ratio: 1;
+}
+@media (max-width: 767.98px) {
+  .section-5__item-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+.section-5__item-icon img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.section-5__item-icon .hover {
+  display: none;
+}
+.section-5__item-icon:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 1099.98px) {
+  .section-5__item-icon:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+.section-5__image {
+  border-radius: 8px;
+  box-shadow: 3px 11px 50px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.section-5__image img {
+  transform: scale(1.26);
+}

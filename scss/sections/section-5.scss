@@ -1,0 +1,155 @@
+$desktop: 1439.98px;
+$desktopLow: 1099.98px;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileLow: 559.98px;
+$mobileSmall: 479.98px;
+
+@import '../mixins';
+
+.section-5 {
+	&__container {
+	}
+
+	&__body {
+		@media (min-width: $mobile) {
+			display: grid;
+			grid-template-columns: 40% 1fr;
+			gap: rem(164);
+
+			@media (max-width: $desktop) {
+				gap: rem(36);
+				grid-template-columns: 48% 1fr;
+			}
+
+			@media (max-width: $desktopLow) {
+				gap: rem(16);
+			}
+		}
+	}
+
+	&__content {
+	}
+
+	&__text-wrapper {
+		&:not(:last-child) {
+			margin-bottom: rem(80);
+
+			@media (max-width: $desktop) {
+				margin-bottom: rem(72);
+			}
+			@media (max-width: $desktopLow) {
+				margin-bottom: rem(50);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(32);
+			}
+		}
+	}
+
+	&__title {
+	}
+
+	&__subtitle {
+	}
+
+	&__text {
+		span {
+			font-weight: 700;
+			font-size: rem(18);
+
+			@media (max-width: $desktopLow) {
+				font-size: rem(16);
+			}
+
+			@media (max-width: $mobile) {
+				font-size: rem(14);
+			}
+		}
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(32);
+		@media (max-width: $mobile) {
+			gap: rem(16);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(80);
+			@media (max-width: $desktop) {
+				margin-bottom: rem(64);
+			}
+			@media (max-width: $desktopLow) {
+				margin-bottom: rem(48);
+			}
+			@media (max-width: $mobile) {
+				margin-bottom: rem(32);
+			}
+		}
+	}
+
+	&__item {
+		cursor: pointer;
+
+		&:hover {
+			.static {
+				display: none;
+			}
+
+			.hover {
+				display: block;
+			}
+
+			.section-5__item-text {
+				color: cl('green');
+			}
+		}
+	}
+
+	&__item-icon {
+		width: 48px;
+		aspect-ratio: 1;
+
+		@media (max-width: $mobile) {
+			width: 40px;
+			height: 40px;
+		}
+
+		img {
+			object-fit: fill;
+		}
+
+		.hover {
+			display: none;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: rem(24);
+
+			@media (max-width: $desktopLow) {
+				margin-bottom: rem(16);
+			}
+		}
+	}
+
+	&__item-text {
+	}
+
+	&__action {
+	}
+
+	&__button {
+	}
+
+	&__image {
+		border-radius: 8px;
+		box-shadow: 3px 11px 50px 0px rgba(0, 0, 0, 0.25);
+		overflow: hidden;
+
+		img {
+			transform: scale(1.26);
+		}
+	}
+}
